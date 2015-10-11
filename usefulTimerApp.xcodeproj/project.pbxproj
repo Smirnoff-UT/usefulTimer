@@ -14,7 +14,6 @@
 		C32D3B011BC950090041C340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32D3AFF1BC950090041C340 /* LaunchScreen.storyboard */; };
 		C32D3B0C1BC950090041C340 /* usefulTimerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32D3B0B1BC950090041C340 /* usefulTimerAppTests.swift */; };
 		C32D3B171BC950090041C340 /* usefulTimerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32D3B161BC950090041C340 /* usefulTimerAppUITests.swift */; };
-
 		C3447E261BCA238D0068F8E7 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3447E251BCA238D0068F8E7 /* CustomFlowLayout.swift */; settings = {ASSET_TAGS = (); }; };
 		C3447E2E1BCA4C160068F8E7 /* bath.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3447E281BCA4C160068F8E7 /* bath.jpg */; settings = {ASSET_TAGS = (); }; };
 		C3447E2F1BCA4C160068F8E7 /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3447E291BCA4C160068F8E7 /* coffee.jpg */; settings = {ASSET_TAGS = (); }; };
@@ -23,6 +22,7 @@
 		C3447E321BCA4C160068F8E7 /* study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3447E2C1BCA4C160068F8E7 /* study.jpg */; settings = {ASSET_TAGS = (); }; };
 		C3447E331BCA4C160068F8E7 /* workout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3447E2D1BCA4C160068F8E7 /* workout.jpg */; settings = {ASSET_TAGS = (); }; };
 		C3447E361BCA5C5D0068F8E7 /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3447E351BCA5C5C0068F8E7 /* extentions.swift */; settings = {ASSET_TAGS = (); }; };
+		CE54A2581BCAA930003A5F3B /* EditTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1B6F91BCA82220002E897 /* EditTime.swift */; settings = {ASSET_TAGS = (); }; };
 		CEC16E981BC9E5DE0091B125 /* GroupAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC16E971BC9E5DE0091B125 /* GroupAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CEC16E9A1BC9E6330091B125 /* CustomUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC16E991BC9E6330091B125 /* CustomUICollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		CEC16E9C1BC9EF940091B125 /* EveryDayAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC16E9B1BC9EF940091B125 /* EveryDayAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -317,8 +317,8 @@
 				CEC16E9C1BC9EF940091B125 /* EveryDayAlarmViewController.swift in Sources */,
 				CEC16E9E1BC9EFA50091B125 /* OtherAlarmViewController.swift in Sources */,
 				C32D3AF91BC950080041C340 /* ViewController.swift in Sources */,
+				CE54A2581BCAA930003A5F3B /* EditTime.swift in Sources */,
 				CEC16EA01BC9EFB40091B125 /* TimerViewController.swift in Sources */,
-				CED1B6FA1BCA82220002E897 /* EditTime.swift in Sources */,
 				CEC16EA21BC9F4320091B125 /* CustomButton.swift in Sources */,
 				CEC16E981BC9E5DE0091B125 /* GroupAlarmViewController.swift in Sources */,
 				CEC16E9A1BC9E6330091B125 /* CustomUICollectionViewCell.swift in Sources */,

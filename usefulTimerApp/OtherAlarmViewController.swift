@@ -168,6 +168,15 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         self.view.addSubview(minutePicker)
         self.view.addSubview(secondPicker)
         
+        hourPicker.delegate = self
+        hourPicker.dataSource = self
+        minutePicker.delegate = self
+        minutePicker.dataSource = self
+        secondPicker.delegate = self
+        secondPicker.dataSource = self
+        
+        setButton.addTarget(self, action: "tapSetButton:", forControlEvents: .TouchUpInside)
+        cancelButton.addTarget(self, action: "tapCancelButton:", forControlEvents: .TouchUpInside)
         hideEditView()
         
         
@@ -255,6 +264,15 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         default:
             break // do nothing
         }
+    }
+    
+    func tapSetButton(sender: UIButton) {
+        hideEditView()
+    }
+    
+    
+    func tapCancelButton(sender: UIButton) {
+        hideEditView()
     }
 
     
