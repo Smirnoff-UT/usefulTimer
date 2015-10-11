@@ -164,11 +164,18 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         
         setupEditView(self, page: 3 )
         
-        self.view.addSubview(hourPicker)
-        self.view.addSubview(minutePicker)
-        self.view.addSubview(secondPicker)
+        
+        hourPicker.delegate = self
+        hourPicker.dataSource = self
+        minutePicker.delegate = self
+        minutePicker.dataSource = self
+        secondPicker.delegate = self
+        secondPicker.dataSource = self
+        
+        setButton.addTarget(self, action: "tapSetButton:", forControlEvents: .TouchUpInside)
         
         hideEditView()
+        
         
         
         
@@ -234,28 +241,42 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         switch sender.tag {
         case 1:
             let nextViewController: UIViewController = GroupAlarmViewController()
-            nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+            nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
             self.presentViewController(nextViewController, animated: true, completion: nil)
             
         case 2:
             let nextViewController: UIViewController = EveryDayAlarmViewController()
-            nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+            nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
             self.presentViewController(nextViewController, animated: true, completion: nil)
             
         case 3:
             let nextViewController: UIViewController = OtherAlarmViewController()
-            nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+            nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
             self.presentViewController(nextViewController, animated: true, completion: nil)
             
         case 4:
             let nextViewController: UIViewController = TimerViewController()
-            nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+            nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
             self.presentViewController(nextViewController, animated: true, completion: nil)
             
         default:
             break // do nothing
         }
     }
+    
+    
+    func tapSetButton(sender: UIButton) {
+        hideEditView()
+    }
+    
+    
+    func tapCancelButton(sender: UIButton) {
+        hideEditView()
+    }
+    
+   
+ 
+
 
     
     

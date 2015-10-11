@@ -162,22 +162,22 @@ class GroupAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         switch sender.tag {
             case 1:
                 let nextViewController: UIViewController = GroupAlarmViewController()
-                nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+                nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
                 self.presentViewController(nextViewController, animated: true, completion: nil)
 
             case 2:
                 let nextViewController: UIViewController = EveryDayAlarmViewController()
-                nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+                nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
                 self.presentViewController(nextViewController, animated: true, completion: nil)
             
             case 3:
                 let nextViewController: UIViewController = OtherAlarmViewController()
-                nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+                nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
                 self.presentViewController(nextViewController, animated: true, completion: nil)
             
             case 4:
                 let nextViewController: UIViewController = TimerViewController()
-                nextViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+                nextViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
                 self.presentViewController(nextViewController, animated: true, completion: nil)
             
             default:
