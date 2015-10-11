@@ -76,7 +76,9 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         
         sender.setTitle("-", forState: .Normal)
         print(sender.superview?.superview?.tag)
-        
+        hourPicker.hidden = false
+        minutePicker.hidden = false
+        secondPicker.hidden = false
     }
 
     

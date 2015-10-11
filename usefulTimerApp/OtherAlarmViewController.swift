@@ -10,10 +10,17 @@ import UIKit
 
 private let cellIdentifier = "cell"
 
-class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,
+                                UIPickerViewDataSource ,UIPickerViewDelegate {
     
     // collectionView
     var collectionView:UICollectionView!
+    
+    // タイマー
+    var timer:NSTimer!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +53,6 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.registerClass(CustomUICollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         collectionView.backgroundColor = UIColor.whiteColor()
         view.addSubview(collectionView)
         
@@ -57,7 +63,11 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         // ツールバー作成
         createToolBar()
         
+        // 時間編集画面作成
+        createEditView()
         
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "onUpdate:", userInfo: nil, repeats: true)
+
         
         
     }
@@ -148,6 +158,83 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|[navigationBar(64)]", options: [], metrics: nil, views: views)
         NSLayoutConstraint.activateConstraints(layoutConstraints)
     }
+    
+    // EditView 作成
+    func createEditView(){
+        
+        setupEditView(self, page: 3 )
+        
+        hourPicker.delegate = self
+        minutePicker.delegate = self
+        secondPicker.delegate = self
+        
+        hourPicker.dataSource = self
+        minutePicker.dataSource = self
+        secondPicker.dataSource = self
+        
+        self.view.addSubview(hourPicker)
+        self.view.addSubview(minutePicker)
+        self.view.addSubview(secondPicker)
+        
+        hourPicker.hidden = true
+        minutePicker.hidden = true
+        secondPicker.hidden = true
+        
+    }
+    
+    /*
+    pickerに表示する列数を返すデータソースメソッド.
+    (実装必須)
+    */
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    /*
+    pickerに表示する行数を返すデータソースメソッド.
+    (実装必須)
+    */
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if (component == 0){
+            return hour_arr.count
+        }else if (component == 1){
+            return minute_arr.count
+        }else if (component == 2){
+            return second_arr.count
+        }
+        return 0;
+    }
+    //表示内容
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if (component == 0){
+            return hour_arr[row].description
+        }else if (component == 1){
+            return minute_arr[row].description
+        }else if (component == 2){
+            return second_arr[row].description
+        }
+        return "";
+    }
+
+    
+    
+    
+    //NSTimerIntervalで指定された秒数毎に呼び出されるメソッド.
+    func onUpdate(timer : NSTimer){
+        
+        let cells = collectionView.visibleCells() as! [CustomUICollectionViewCell]
+        //print(cells)
+        
+        for cell in cells {
+            print(cell.button?.titleLabel?.text)
+            //cell.button?.setTitle("hello", forState: .Normal)
+        }
+    }
+    
+    
+    
+    
     
     @IBAction func onToolBarButtonClick(sender: UIBarButtonItem) {
         
