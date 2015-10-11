@@ -31,7 +31,7 @@ class TimerViewController: UIViewController, UICollectionViewDataSource, UIColle
         // direction of scroll
         layout.scrollDirection = .Vertical
         // セルの大きさ
-        layout.itemSize = CGSize(width: windowWidth / 2 - 5, height: windowHeight / 100 / 3 * 76)
+        layout.itemSize = CGSize(width: windowWidth / 2 - 5, height: windowHeight / 100 / 3 * 80)
         // レイアウトのマージン
         layout.sectionInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 3)
         // アイテム同士のマージン
@@ -53,9 +53,6 @@ class TimerViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         // ツールバー作成
         createToolBar()
-        
-        
-        
         
     }
     
