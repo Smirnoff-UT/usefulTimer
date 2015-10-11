@@ -14,6 +14,7 @@
 		C32D3B011BC950090041C340 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C32D3AFF1BC950090041C340 /* LaunchScreen.storyboard */; };
 		C32D3B0C1BC950090041C340 /* usefulTimerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32D3B0B1BC950090041C340 /* usefulTimerAppTests.swift */; };
 		C32D3B171BC950090041C340 /* usefulTimerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32D3B161BC950090041C340 /* usefulTimerAppUITests.swift */; };
+		C3447E261BCA238D0068F8E7 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3447E251BCA238D0068F8E7 /* CustomFlowLayout.swift */; settings = {ASSET_TAGS = (); }; };
 		CEC16E981BC9E5DE0091B125 /* GroupAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC16E971BC9E5DE0091B125 /* GroupAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		CEC16E9A1BC9E6330091B125 /* CustomUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC16E991BC9E6330091B125 /* CustomUICollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		CEC16E9C1BC9EF940091B125 /* EveryDayAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC16E9B1BC9EF940091B125 /* EveryDayAlarmViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -53,6 +54,7 @@
 		C32D3B121BC950090041C340 /* usefulTimerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usefulTimerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32D3B161BC950090041C340 /* usefulTimerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usefulTimerAppUITests.swift; sourceTree = "<group>"; };
 		C32D3B181BC950090041C340 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3447E251BCA238D0068F8E7 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		CEC16E971BC9E5DE0091B125 /* GroupAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAlarmViewController.swift; sourceTree = "<group>"; };
 		CEC16E991BC9E6330091B125 /* CustomUICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUICollectionViewCell.swift; sourceTree = "<group>"; };
 		CEC16E9B1BC9EF940091B125 /* EveryDayAlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EveryDayAlarmViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				CEC16E991BC9E6330091B125 /* CustomUICollectionViewCell.swift */,
 				CEC16EA11BC9F4320091B125 /* CustomButton.swift */,
 				CEC16E971BC9E5DE0091B125 /* GroupAlarmViewController.swift */,
+				C3447E251BCA238D0068F8E7 /* CustomFlowLayout.swift */,
 				CEC16E9B1BC9EF940091B125 /* EveryDayAlarmViewController.swift */,
 				CEC16E9D1BC9EFA50091B125 /* OtherAlarmViewController.swift */,
 				CEC16E9F1BC9EFB40091B125 /* TimerViewController.swift */,
@@ -280,6 +283,7 @@
 				CEC16EA21BC9F4320091B125 /* CustomButton.swift in Sources */,
 				CEC16E981BC9E5DE0091B125 /* GroupAlarmViewController.swift in Sources */,
 				CEC16E9A1BC9E6330091B125 /* CustomUICollectionViewCell.swift in Sources */,
+				C3447E261BCA238D0068F8E7 /* CustomFlowLayout.swift in Sources */,
 				C32D3AF71BC950080041C340 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

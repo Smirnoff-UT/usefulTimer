@@ -21,25 +21,25 @@ class TimerViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         // 画面とそのサイズ
         windowHeight = self.view.frame.height
-        windowWidth = self.view.frame.width
+        windowWidth  = self.view.frame.width
         
         self.view.backgroundColor = UIColor.whiteColor()
         
         // create Layout
-        let layout = UICollectionViewFlowLayout()
-        // レイアウトの大きさ
-        // direction of scroll
-        layout.scrollDirection = .Vertical
-        // セルの大きさ
-        layout.itemSize = CGSize(width: windowWidth / 2 - 5, height: windowHeight / 100 / 3 * 80)
-        // レイアウトのマージン
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 3)
-        // アイテム同士のマージン
-        layout.minimumInteritemSpacing = 0.0
-        // セクションとアイテムのマージン
-        layout.minimumLineSpacing = 2.0
-        // セクション毎のヘッダーサイズ.
-        layout.headerReferenceSize = CGSize(width: windowWidth, height: windowHeight / 100 * 12)
+        let layout   = CustomFlowLayout()
+//        // レイアウトの大きさ
+//        // direction of scroll
+//        layout.scrollDirection = .Vertical
+//        // セルの大きさ
+//        layout.itemSize = CGSize(width: windowWidth / 2 - 5, height: windowHeight / 100 / 3 * 80)
+//        // レイアウトのマージン
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 3)
+//        // アイテム同士のマージン
+//        layout.minimumInteritemSpacing = 0.0
+//        // セクションとアイテムのマージン
+//        layout.minimumLineSpacing = 2.0
+//        // セクション毎のヘッダーサイズ.
+//        layout.headerReferenceSize = CGSize(width: windowWidth, height: windowHeight / 100 * 12)
         
         // コレクションビュー作成
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)

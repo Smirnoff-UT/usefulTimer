@@ -13,6 +13,7 @@ class CustomUICollectionViewCell : UICollectionViewCell{
     var textLabel : UILabel?
     var button : CustomButton?
     var edit_bt : UIButton?
+    var image : UIImage?
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -27,7 +28,7 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         //setTime = thisTimer.timeHour.description + " : " + thisTimer.timeMinute.description
         button?.setTitle( "12:00" , forState: .Normal )
         //角丸
-        button?.layer.cornerRadius = 30
+        button?.layer.cornerRadius = 0
         //ボーダー幅
         button?.layer.borderWidth = 0.3
         //ボーダー色
@@ -41,11 +42,10 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         // Cellに追加.
         self.contentView.addSubview(button!)
         
-        
         // EditButtonを生成
         edit_bt = UIButton()
         //角丸
-        edit_bt?.layer.cornerRadius = 10
+        //edit_bt?.layer.cornerRadius = 10
         // Title
         edit_bt?.setTitle("+" , forState: .Normal)
         // Color
@@ -61,9 +61,6 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         edit_bt?.addTarget(self, action: "tappedEditButton:", forControlEvents: .TouchUpInside)
         // Cellに追加.
         self.contentView.addSubview(edit_bt!)
-
-        
-        
         
         
 
@@ -79,7 +76,6 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         
         sender.setTitle("-", forState: .Normal)
         print(sender.superview?.superview?.tag)
-
         
     }
 

@@ -34,13 +34,13 @@ class GroupAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         // direction of scroll
         layout.scrollDirection = .Vertical
         // セルの大きさ
-        layout.itemSize = CGSize(width: windowWidth / 2 - 5, height: windowHeight / 100 / 3 * 76)
+        layout.itemSize = CGSize(width: windowWidth / 2 , height: windowHeight / 100 / 3 * 76)
         // レイアウトのマージン
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 3, bottom: 0, right: 3)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         // アイテム同士のマージン
         layout.minimumInteritemSpacing = 0.0
         // セクションとアイテムのマージン
-        layout.minimumLineSpacing = 2.0
+        layout.minimumLineSpacing = 0.0
         // セクション毎のヘッダーサイズ.
         layout.headerReferenceSize = CGSize(width: windowWidth, height: windowHeight / 100 * 12)
         
