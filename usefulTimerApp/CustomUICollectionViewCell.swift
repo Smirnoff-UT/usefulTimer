@@ -40,7 +40,7 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         // アクション
         button?.addTarget(self, action: "tappedButton:", forControlEvents:.TouchUpInside)
         // Cellに追加.
-        self.contentView.addSubview(button!)
+        self.addSubview(button!)
         
         // EditButtonを生成
         edit_bt = UIButton()
@@ -60,7 +60,7 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         edit_bt?.layer.position = CGPoint(x: self.layer.bounds.width / 5 * 4, y: self.layer.bounds.height / 7)
         edit_bt?.addTarget(self, action: "tappedEditButton:", forControlEvents: .TouchUpInside)
         // Cellに追加.
-        self.contentView.addSubview(edit_bt!)
+        self.addSubview(edit_bt!)
         
         
 
