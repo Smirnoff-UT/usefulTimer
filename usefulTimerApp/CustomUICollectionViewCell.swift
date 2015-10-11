@@ -22,6 +22,14 @@ class CustomUICollectionViewCell : UICollectionViewCell{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        //UIImageを生成
+        image = UIImage(named: "nap.jpg")
+        image = image?.crop(CGRect(x: 0, y: 0, width: windowWidth / 2 , height: windowHeight / 100 / 3 * 76))
+        image = image?.resize(CGSize(width: windowWidth / 2 , height: windowHeight / 100 / 3 * 76))
+
+        var imageView = UIImageView(image: image)
+        self.addSubview(imageView)
+        
         // CustomButtonを生成
         button = CustomButton(frame: CGRectMake(0, 0, frame.width, frame.height))
         
@@ -33,10 +41,11 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         button?.layer.borderWidth = 0.3
         //ボーダー色(なし)
         button?.layer.borderColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.7).CGColor
-        // 背景色(白にしておく)
-        button?.backgroundColor = UIColor.whiteColor()
+        // 背景色(透明色にしておく)
+        //button?.backgroundColor = UIColor.whiteColor()
+        button?.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0)
         // タイトル色
-        button?.setTitleColor(UIColor.grayColor(), forState: .Normal)
+        button?.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         // アクション
         button?.addTarget(self, action: "tappedButton:", forControlEvents:.TouchUpInside)
         // Cellに追加.
@@ -61,6 +70,8 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         edit_bt?.addTarget(self, action: "tappedEditButton:", forControlEvents: .TouchUpInside)
         // Cellに追加.
         self.addSubview(edit_bt!)
+        
+        
         
         
 
