@@ -164,21 +164,13 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         
         setupEditView(self, page: 3 )
         
-        hourPicker.delegate = self
-        minutePicker.delegate = self
-        secondPicker.delegate = self
-        
-        hourPicker.dataSource = self
-        minutePicker.dataSource = self
-        secondPicker.dataSource = self
-        
         self.view.addSubview(hourPicker)
         self.view.addSubview(minutePicker)
         self.view.addSubview(secondPicker)
         
-        hourPicker.hidden = true
-        minutePicker.hidden = true
-        secondPicker.hidden = true
+        hideEditView()
+        
+        
         
     }
     
@@ -208,6 +200,7 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if (component == 0){
+            print(hour_arr[row].description)
             return hour_arr[row].description
         }else if (component == 1){
             return minute_arr[row].description
@@ -227,7 +220,7 @@ class OtherAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         //print(cells)
         
         for cell in cells {
-            print(cell.button?.titleLabel?.text)
+            //print(cell.button?.titleLabel?.text)
             //cell.button?.setTitle("hello", forState: .Normal)
         }
     }

@@ -75,10 +75,9 @@ class CustomUICollectionViewCell : UICollectionViewCell{
     @IBAction func tappedEditButton (sender : UIButton ) {
         
         sender.setTitle("-", forState: .Normal)
-        print(sender.superview?.superview?.tag)
-        hourPicker.hidden = false
-        minutePicker.hidden = false
-        secondPicker.hidden = false
+        //print(sender.superview?.superview?.tag)
+        
+        visibleEditView()
     }
 
     
