@@ -23,7 +23,7 @@ class CustomFlowLayout : UICollectionViewFlowLayout {
         // セクションとアイテムのマージン
         self.minimumLineSpacing = 0.0
         // セクション毎のヘッダーサイズ.
-        self.headerReferenceSize = CGSize(width: windowWidth, height: windowHeight / 100 * 12)
+        self.headerReferenceSize = CGSize(width: windowWidth, height: windowHeight / 100 * 8)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -27,13 +27,13 @@ class CustomUICollectionViewCell : UICollectionViewCell{
         
         //setTime = thisTimer.timeHour.description + " : " + thisTimer.timeMinute.description
         button?.setTitle( "12:00" , forState: .Normal )
-        //角丸
+        //角丸なし
         button?.layer.cornerRadius = 0
-        //ボーダー幅
+        //ボーダー幅(将来的にナシ)
         button?.layer.borderWidth = 0.3
-        //ボーダー色
+        //ボーダー色(なし)
         button?.layer.borderColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 0.7).CGColor
-        // 背景色
+        // 背景色(白にしておく)
         button?.backgroundColor = UIColor.whiteColor()
         // タイトル色
         button?.setTitleColor(UIColor.grayColor(), forState: .Normal)

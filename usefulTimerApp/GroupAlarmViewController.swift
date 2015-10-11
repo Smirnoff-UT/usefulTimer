@@ -29,20 +29,20 @@ class GroupAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         self.view.backgroundColor = UIColor.whiteColor()
         
         // create Layout
-        let layout = UICollectionViewFlowLayout()
-        // レイアウトの大きさ
-        // direction of scroll
-        layout.scrollDirection = .Vertical
-        // セルの大きさ
-        layout.itemSize = CGSize(width: windowWidth / 2 , height: windowHeight / 100 / 3 * 76)
-        // レイアウトのマージン
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        // アイテム同士のマージン
-        layout.minimumInteritemSpacing = 0.0
-        // セクションとアイテムのマージン
-        layout.minimumLineSpacing = 0.0
-        // セクション毎のヘッダーサイズ.
-        layout.headerReferenceSize = CGSize(width: windowWidth, height: windowHeight / 100 * 12)
+        let layout = CustomFlowLayout()
+//        // レイアウトの大きさ
+//        // direction of scroll
+//        layout.scrollDirection = .Vertical
+//        // セルの大きさ
+//        layout.itemSize = CGSize(width: windowWidth / 2 , height: windowHeight / 100 / 3 * 76)
+//        // レイアウトのマージン
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        // アイテム同士のマージン
+//        layout.minimumInteritemSpacing = 0.0
+//        // セクションとアイテムのマージン
+//        layout.minimumLineSpacing = 0.0
+//        // セクション毎のヘッダーサイズ.
+//        layout.headerReferenceSize = CGSize(width: windowWidth, height: windowHeight / 100 * 12)
         
         
         // コレクションビュー作成
@@ -50,9 +50,12 @@ class GroupAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.registerClass(CustomUICollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         collectionView.backgroundColor = UIColor.whiteColor()
         view.addSubview(collectionView)
+        
+        
+        //ナビゲーションバー作成
+        createNavigationBar()
         
         
         // ツールバー作成
@@ -134,6 +137,24 @@ class GroupAlarmViewController: UIViewController, UICollectionViewDataSource, UI
         myToolbar.items = [myUIBarButtonToGroupAlarm, myUIBarButtonToEveryDay, myUIBarButtonToOthers, myUIBarButtonToTimer]
         
         self.view.addSubview(myToolbar)
+    }
+    
+    func createNavigationBar(){
+        //navigationbar設定
+        let navigationBar = UINavigationBar(frame: CGRect.zero)
+        navigationBar.translatesAutoresizingMaskIntoConstraints = false
+        navigationBar.setItems([UINavigationItem(title: "Group")], animated: false)
+        navigationBar.barTintColor = UIColor(red: 249.0/255.0, green: 119.0/255.0, blue: 19.0/255.0, alpha: 1.0)
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.view.addSubview(navigationBar)
+        
+        
+        //constraints 設定
+        let views = ["navigationBar": navigationBar]
+        var layoutConstraints = [NSLayoutConstraint]()
+        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|[navigationBar]|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|[navigationBar(64)]", options: [], metrics: nil, views: views)
+        NSLayoutConstraint.activateConstraints(layoutConstraints)
     }
     
     @IBAction func onToolBarButtonClick(sender: UIBarButtonItem) {

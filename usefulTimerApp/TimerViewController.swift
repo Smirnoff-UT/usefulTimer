@@ -51,6 +51,9 @@ class TimerViewController: UIViewController, UICollectionViewDataSource, UIColle
         view.addSubview(collectionView)
         
         
+        //ナビゲーションバー作成
+        createNavigationBar()
+        
         // ツールバー作成
         createToolBar()
         
@@ -124,6 +127,24 @@ class TimerViewController: UIViewController, UICollectionViewDataSource, UIColle
         myToolbar.items = [myUIBarButtonToGroupAlarm, myUIBarButtonToEveryDay, myUIBarButtonToOthers, myUIBarButtonToTimer]
         
         self.view.addSubview(myToolbar)
+    }
+    
+    func createNavigationBar(){
+        //navigationbar設定
+        let navigationBar = UINavigationBar(frame: CGRect.zero)
+        navigationBar.translatesAutoresizingMaskIntoConstraints = false
+        navigationBar.setItems([UINavigationItem(title: "Timer")], animated: false)
+        navigationBar.barTintColor = UIColor(red: 41.0/255.0, green: 92.0/255.0, blue: 209.0/255.0, alpha: 1.0)
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        self.view.addSubview(navigationBar)
+        
+        
+        //constraints 設定
+        let views = ["navigationBar": navigationBar]
+        var layoutConstraints = [NSLayoutConstraint]()
+        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("|[navigationBar]|", options: [], metrics: nil, views: views)
+        layoutConstraints += NSLayoutConstraint.constraintsWithVisualFormat("V:|[navigationBar(64)]", options: [], metrics: nil, views: views)
+        NSLayoutConstraint.activateConstraints(layoutConstraints)
     }
     
     @IBAction func onToolBarButtonClick(sender: UIBarButtonItem) {
